@@ -1,5 +1,5 @@
-# moqui-rasa
-此为适配AI交互模块，可适配到多端，web、telegram、rocket.chat等场景使用
+# rasa-moqui
+此为Rasa适配Moqui交互模块，可适配到多端，web、telegram、rocket.chat等场景使用
 ### Installing Rasa Open Source
 更新pip  
 ```pip3 install -U pip```  
