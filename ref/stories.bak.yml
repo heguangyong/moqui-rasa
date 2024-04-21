@@ -1,0 +1,73 @@
+version: "3.0"
+stories:
+  - story: 问好
+    steps:
+      - intent: greet
+      - action: utter_greet
+  - story: 再见
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - story: 闲聊
+    steps:
+      - intent: chitchat
+      - action: respond_chitchat
+  - story: 表单执行中止或退出
+    steps:
+      - or:
+          - intent: weather
+          - intent: weather
+            entities:
+              - address: 上海
+          - intent: weather
+            entities:
+              - date-time: 明天
+          - intent: weather
+            entities:
+              - date-time: 明天
+              - address: 上海
+      - action: weather_form
+      - active_loop: weather_form
+      - intent: stop
+      - action: utter_ask_continue
+      - intent: deny
+      - action: action_deactivate_loop
+      - active_loop: null
+
+  - story: 查询用户信息
+    steps:
+      - intent: query_user
+        entities:
+          - user_id: '100000'
+      - action: action_query_user
+      - slot_was_set:
+          - user_id: '100000'
+      - action: utter_user_details
+
+  - story: 未提供用户ID
+    steps:
+      - intent: query_user
+      - action: action_query_user
+      - slot_was_set:
+          - user_id: null
+      - action: utter_default
+
+  - story: 未找到用户信息
+    steps:
+      - intent: query_user
+        entities:
+          - user_id: '999999'  # 使用一个不存在的用户ID
+      - action: action_query_user
+      - slot_was_set:
+          - user_id: '999999'
+      - active_loop: utter_user_not_found
+
+  - story: 查询用户详细资料
+    steps:
+      - intent: query_user
+        entities:
+          - user_id: '100052'
+      - action: action_query_user
+      - slot_was_set:
+          - user_id: '100052'
+      - action: utter_user_details
