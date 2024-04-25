@@ -27,6 +27,11 @@ init rasa
 运行rasa环境
 ```rasa train, rasa shell, rasa test```
 
+本地测试安装ngrok
+
+
+
+
 ### Command Line Interface
 The command line interface (CLI) gives you easy-to-remember commands for common tasks. This page describes the behavior of the commands and the parameters you can pass to them.
 
