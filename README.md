@@ -1,31 +1,35 @@
 # rasa-moqui
 作为一个专业rasa顾问，请从rasa3.6的基础环境开始，项目名称为rasa-moqui 使用rasa的form功能查询rasa的用户列表；
 
-### Installing Rasa Open Source
-python environment setup
-```python3 --version```
-```pip3 --version```
-```brew update```
-安装python3.10 
-```brew install python```
-初始化环境
-```python3.10 -m venv ./venv```
-激活环境
-```source ./venv/bin/activate```
-更新pip  
-```pip3 install -U pip```  
-install rasa  
-```pip3 install rasa```   
-init rasa  
-```rasa init```  
-安装rasa依赖环境
-```pip install rasa-sdk```
-确认moqui API可用
+### Installing Rasa Open Source  
+python environment setup 安装python3.10   
+```
+python3 --version
+pip3 --version
+brew update
+brew install python
+```  
+初始化环境  激活环境 
+```
+python3.10 -m venv ./venv
+source ./venv/bin/activate
+```  
+更新pip   install rasa    init rasa  
+安装rasa依赖环境  运行rasa环境
+```
+pip3 install -U pip
+pip3 install rasa
+rasa init
+rasa train
+rasa shell
+rasa test
+```
+
+确认moqui API可用  
 用户列表：api_url = 'https://d.upservce.com/rest/s1/moqui/users'
 单个用户：api_url = 'https://d.upservce.com/rest/s1/moqui/users/{userId}'
 
-运行rasa环境
-```rasa train, rasa shell, rasa test```
+
 
 本地测试安装ngrok
 
