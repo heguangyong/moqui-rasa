@@ -41,11 +41,34 @@ nlu:
 - intent: city_info
   examples: |
     - [/Europe/London](target_timezone)
-    - [/Europe/Lisbon](target_timezone)
-    - [/America/Toronto](target_timezone)
-    - [/America/New_York](target_timezone)
-    - [/Europe/Istanbul](target_timezone)
+    - [/Europe/Paris](target_timezone)
     - [/Europe/Berlin](target_timezone)
+    - [/Europe/Madrid](target_timezone)
+    - [/Europe/Rome](target_timezone)
+    - [/America/New_York](target_timezone)
+    - [/America/Los_Angeles](target_timezone)
+    - [/America/Chicago](target_timezone)
+    - [/America/Toronto](target_timezone)
+    - [/Asia/Tokyo](target_timezone)
+    - [/Asia/Seoul](target_timezone)
+    - [/Asia/Shanghai](target_timezone)
+    - [/Asia/Dubai](target_timezone)
+    - [/Asia/Singapore](target_timezone)
+    - [/Australia/Sydney](target_timezone)
+    - [/Australia/Melbourne](target_timezone)
+    - [/Australia/Brisbane](target_timezone)
+    - [/Africa/Johannesburg](target_timezone)
+    - [/Africa/Lagos](target_timezone)
+    - [/Africa/Cairo](target_timezone)
+    - [/Africa/Nairobi](target_timezone)
+    - What's the time zone for [/Europe/Stockholm](target_timezone)?
+    - I'm interested in [/America/Vancouver](target_timezone).
+    - Please find the timezone for [/Asia/Hong_Kong](target_timezone).
+    - Can you look up the time zone for [/Africa/Casablanca](target_timezone)?
+    - What is the time zone for [/America/Mexico_City](target_timezone)?
+    - What's the timezone in [/Europe/Amsterdam](target_timezone)?
+    - Could you provide the timezone for [/Asia/Bangkok](target_timezone)?
+
 
 - intent: thanks
   examples: |

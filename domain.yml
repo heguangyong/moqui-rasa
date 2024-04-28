@@ -1,24 +1,24 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - find_time_zone
-  - city_info
-  - thanks
+- greet
+- goodbye
+- find_time_zone
+- city_info
+- thanks
 
 entities:
-  - target_timezone
+- target_timezone
 
 slots:
   target_timezone:
     type: text
     mappings:
-      - type: from_entity
-        entity: target_timezone
+    - type: from_entity
+      entity: target_timezone
 
 actions:
-  - action_finding_timezone
+- action_find_timezone
 
 responses:
   utter_greet:
