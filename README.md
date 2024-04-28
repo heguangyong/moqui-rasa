@@ -14,12 +14,7 @@ pip3 install -U pip
 
 ```
 代码均在 Rasa 3.6.X 版本中完成。
-使用：
-
-```shell
-pip install --no-deps -r ../full_requirements.txt
-```
-或者安装并初始化rasa
+安装并初始化rasa
 ``` 
 pip3 install rasa
 
@@ -49,7 +44,7 @@ pip install MicroTokenizer
 
 ## 激活虚拟环境
 ```shell
-source .venv/bin/activate
+source ./venv/bin/activate
 ```
 ## 训练 Rasa 模型
 
