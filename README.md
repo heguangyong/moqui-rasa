@@ -1,30 +1,41 @@
 # rasa-moqui
 
 ## Rasa 版本和项目依赖
-python环境准备  
+python环境准备   安装python3.10 
+
 ```
-//python environment setup 安装python3.10 
 python3 --version
+``` 
+```
 pip3 --version
+```
+```
 brew update
+```
+```
 brew install python
+```
+更新pip   
 
-//更新pip   
+```
 pip3 install -U pip
-
 ```
 代码均在 Rasa 3.6.X 版本中完成。
+
 安装并初始化rasa
 ``` 
 pip3 install rasa
-
-//查看版本
+```
+查看版本
+```
 rasa --version
-
-// rasa环境启动失败，更新  
+```
+rasa环境启动失败，更新  
+```
 pip install --upgrade rasa
-
-//初始化项目
+```
+初始化项目
+```
 rasa init
 ```
 
@@ -80,14 +91,6 @@ rasa run --cors "*"
 python -m http.server
 ```
 
-尝试输入一些查询，例如“上海今天的天气如何”并查看响应。
-
-演示效果如下所示：
-
-![](media/demo.png)
-
-
-
   
 
 ## 使用 API 密钥启动 Rasa 动作服务器
@@ -97,36 +100,12 @@ python -m http.server
 
 
 
-## Command Line Interface
-The command line interface (CLI) gives you easy-to-remember commands for common tasks. This page describes the behavior of the commands and the parameters you can pass to them.
-
-### Cheat Sheet
-
-| Command                |  Effect |
-|------------------------|---|
-| rasa init              |  Creates a new project with example training data, actions, and config files. |
-| rasa train             |  Trains a model using your NLU data and stories, saves trained model in ./models. |
-| rasa interactive       |  Starts an interactive learning session to create new training data by chatting to your assistant. |
-| rasa shell             |  Loads your trained model and lets you talk to your assistant on the command line. |
-| rasa run               | Starts a server with your trained model.  |
-| rasa run actions       |  Starts an action server using the Rasa SDK. |
-| rasa visualize         |  Generates a visual representation of your stories. |
-| rasa test              |  Tests a trained Rasa model on any files starting with test_. |
-| rasa test e2e          |  Runs end-to-end testing fully integrated with the action server that serves as acceptance testing. |
-| rasa data split nlu    |Performs a 80/20 split of your NLU training data.|
-| rasa data split stories | Do the same as rasa data split nlu, but for your stories data.  |
-| rasa data convert      | Converts training data between different formats.  |
-| rasa data migrate      | Migrates 2.0 domain to 3.0 format.  |
-| rasa data validate     |  Checks the domain, NLU and conversation data for inconsistencies. |
-| rasa export	Exports    |  conversations from a tracker store to an event broker. |
-| rasa evaluate markers | Extracts markers from an existing tracker store.  |
-|  rasa marker upload     | Upload marker configurations to Analytics Data Pipeline  |
-|  rasa license    |  Display licensing information. |
-|  rasa -h    | Shows all available commands.  |
-
 ## 有用链接
 
 你可以在[Rasa指南](https://rasa.com/docs/rasa/command-line-interface)中找到更多有关Rasa语法的信息。
+
+你可以阅读[Chatbots with Rasa](https://medium.com/codex/introduction-to-chatbots-with-rasa-python-463d9df058e9#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImUxYjkzYzY0MDE0NGI4NGJkMDViZjI5NmQ2NzI2MmI2YmM2MWE0ODciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDM1MjI2OTAwNzc5ODYxMzQ2MTQiLCJlbWFpbCI6ImhlZ3Vhbmd5b25nQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3MTQyMzE2MzEsIm5hbWUiOiJHdWFuZ3lvbmcgSGUiLCJnaXZlbl9uYW1lIjoiR3Vhbmd5b25nIiwiZmFtaWx5X25hbWUiOiJIZSIsImlhdCI6MTcxNDIzMTkzMSwiZXhwIjoxNzE0MjM1NTMxLCJqdGkiOiI1YjFmYmEzZWEwYTZlNzMzMGIxNTViNGFkMDdkNWUwZmEwMzZlYTY5In0.k0ONP-3Uzo1Edys3Qa3AReAaQyBXz26Ry3xUG9vhUNUCxFfafDO8_fvA-MvUQesiRbXdCCIdNbec4flJnlvoyesmtZ7kDhFifbLYOP9HSq9fhjCLHXmVjXyLkuq7hHqLBw1GE92hcI3sMNWws4K5lJrS8zHDRlWpQ5ypGxR-AoYgkygdk8pL8vMk1Ar8IN50Hvi9I94j5dwRFakix9Ib_igGFltDoPBwwCLTMAXBWOTsgvCQDsgvtVPVEP0Q-Ucp3kamiRfSsgdfkW8ip_uQy25Roht5RaAL0adJAErEchsZ4cIGLg6doL683ASUOwrVqyBinVnK0ynOfDwnAfXEtw)
+对Rasa关键知识点有个基本认识。
 
 ## 本地测试安装ngrok
 
