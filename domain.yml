@@ -3,35 +3,35 @@ version: "3.1"
 intents:
 - greet
 - goodbye
-- find_time_zone
-- city_info
+- find_user_info
+- user_info
 - thanks
 
 entities:
-- target_timezone
+- target_userinfo
 
 slots:
-  target_timezone:
+  target_userinfo:
     type: text
     mappings:
     - type: from_entity
-      entity: target_timezone
+      entity: target_userinfo
 
 actions:
-- action_find_timezone
+- action_find_userinfo
 
 responses:
   utter_greet:
-  - text: "Hey! I am a Rasa Instance by BaysanSoft. I am here to help you to get the time zone of the area you wanted."
+  - text: "Hey! I am a Rasa Instance by Upservce. I am here to help you to get the user info of the area you wanted."
 
   utter_goodbye:
   - text: "Bye"
 
-  utter_ask_city_info:
-  - text: "Do you want to learn the time zone of which city? Please give me in this structure: /Area/Region"
+  utter_ask_user_info:
+  - text: "Do you want to learn the user info of which user? Please give me in this structure: ID,for example:100000"
 
-  utter_finding_timezone:
-  - text: "Give me a second to look the time zone for {target_timezone}"
+  utter_finding_userinfo:
+  - text: "Give me a second to look the user info for {target_userinfo}"
 
   utter_you_are_welcome:
   - text: "You are welcome ^^"
