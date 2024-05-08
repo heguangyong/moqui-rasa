@@ -48,7 +48,8 @@ class ActionShowUserInfo(Action):
             res = res.json()
 
             if res:
-                output = f"User info is {res}"
+                output = (f"User info is {res} "
+                          f"https://d.upservce.com/qapps/tools/Entity/DataEdit/EntityDetail?selectedEntity=moqui.security.UserAccount")
             else:
                 output = "Please type in this structure: ID， for example:100000。"
         except HTTPError as e:
