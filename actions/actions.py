@@ -59,3 +59,52 @@ class ActionShowUserInfo(Action):
             output = f"发生错误: {str(e)}"
         dispatcher.utter_message(text=output)
         return []
+
+class ActionAskForCredentials(Action):
+    def name(self) -> Text:
+        return "action_ask_for_credentials"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="请输入您的用户名和密码。")
+        return []
+
+class ActionValidateLogin(Action):
+    def name(self) -> Text:
+        return "action_validate_login"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        username = tracker.get_slot('username')
+        password = tracker.get_slot('password')
+
+        api_url = "https://d.upservce.com/rest/s1/moqui/login"
+        auth_token = 'Basic a2FybWE6QWJjZEAxMjM0'
+        headers = {
+            'Authorization': auth_token,
+            'Content-Type': 'application/json'
+        }
+        payload = {
+            'username': username,
+            'password': password
+        }
+
+        try:
+            res = requests.post(api_url, json=payload, headers=headers)
+            res.raise_for_status()
+            res_json = res.json()
+
+            if res_json.get('loginSuccess'):
+                user_role = res_json.get('userRole')
+                return [SlotSet("user_role", user_role), SlotSet("login_success", True)]
+            else:
+                dispatcher.utter_message(text="登录失败，请检查您的用户名和密码。")
+                return [SlotSet("login_success", False)]
+        except HTTPError as e:
+            dispatcher.utter_message(text=f"发生HTTP错误: {str(e)}")
+            return [SlotSet("login_success", False)]
+        except Exception as e:
+            dispatcher.utter_message(text=f"发生错误: {str(e)}")
+            return [SlotSet("login_success", False)]

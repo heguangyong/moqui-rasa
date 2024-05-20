@@ -1,6 +1,16 @@
 version: "3.1"
 
 stories:
+- story: 用户登录并获取服务清单
+  steps:
+  - intent: request_login
+    action: action_ask_for_credentials
+  - intent: provide_credentials
+    entities:
+      - username: "karma"
+      - password: "Abcd@1234"
+    action: action_validate_login
+  - action: action_provide_service_list
 
 - story: asking user info
   steps:
